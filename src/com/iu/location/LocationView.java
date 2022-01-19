@@ -12,7 +12,7 @@ public class LocationView {
 			System.out.print(ar.get(i).getPostal_code() + "\t");
 			System.out.print(ar.get(i).getCity() + "\t");
 			System.out.print(ar.get(i).getState_province() + "\t");
-			System.out.print(ar.get(i).getCountry_id() + "\n");
+			System.out.println(ar.get(i).getCountry_id());
 			System.out.println("----------------------------------------------------------------------------------");
 		}
 		
