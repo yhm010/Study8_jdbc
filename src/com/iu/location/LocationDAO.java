@@ -22,9 +22,9 @@ public class LocationDAO {
 		// 1. DB에 로그인
 		Connection con = dbConnector.getConnect();
 		// 2. Sql Query문 작성
-		String spl = "SELECT * FROM LOCATIONS";
+		String sql = "SELECT * FROM LOCATIONS";
 		// 3. 미리 전송
-		PreparedStatement st = con.prepareStatement(spl);
+		PreparedStatement st = con.prepareStatement(sql);
 		// 4. ? 세팅 통과
 
 		// 5. 최종 전송후 결과 처리
