@@ -1,9 +1,25 @@
 package com.iu.s1.start;
 
+import java.util.List;
+
+import com.iu.s1.deprtment.DepartmentView;
+import com.iu.s1.deprtment.DeprtmentDAO;
+import com.iu.s1.deprtment.DeprtmentDTO;
+import com.iu.s1.utll.DBConnector;
+
 public class StartMain {
 
 	public static void main(String[] args) {
-		System.out.println("DBJ 연동 테스트 시작");
+		System.out.println("DB 연동 테스트 시작");
+		
+		DeprtmentDAO deprtmentDAO = new DeprtmentDAO();
+		DepartmentView dapDepartmentView = new DepartmentView();
+		try {
+			List<DeprtmentDTO> ar = deprtmentDAO.getList();
+			dapDepartmentView.view(ar);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		System.out.println("DB 연동 테스트 끝");
 
