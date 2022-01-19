@@ -22,7 +22,6 @@ public class DeprtmentDAO {
 		// SELECT * FROM DEPARTMENTS;
 		// 1. DB 로그인
 		Connection con = dbConnector.getConnect();
-		
 		// 2. SQL Query 문 작성
 		//    java에서는 ; 안씀
 		String sql = "SELECT * FROM DEPARTMENTS";
@@ -33,7 +32,7 @@ public class DeprtmentDAO {
 		// 4. ? 값을 세팅, 없으면 통과
 		
 		// 5. 최종 전송 후 결과 처리
-		ResultSet rs = st.executeQuery();
+		ResultSet rs = st.executeQuery(); // 쿼리를 실행하겠다는 뜻
 		
 		//cursor가 한 줄 읽는 메서드 next() 리턴은 데이터가 있으면 true, 없으면 false
 		while(rs.next()) {

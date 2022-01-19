@@ -2,6 +2,9 @@ package com.iu.s1.start;
 
 import java.util.List;
 
+import com.iu.location.LocationDAO;
+import com.iu.location.LocationDTO;
+import com.iu.location.LocationView;
 import com.iu.s1.deprtment.DepartmentView;
 import com.iu.s1.deprtment.DeprtmentDAO;
 import com.iu.s1.deprtment.DeprtmentDTO;
@@ -12,12 +15,22 @@ public class StartMain {
 	public static void main(String[] args) {
 		System.out.println("DB 연동 테스트 시작");
 		
-		DeprtmentDAO deprtmentDAO = new DeprtmentDAO();
-		DepartmentView dapDepartmentView = new DepartmentView();
+//		DeprtmentDAO deprtmentDAO = new DeprtmentDAO();
+//		DepartmentView dapDepartmentView = new DepartmentView();
+//		try {
+//			List<DeprtmentDTO> ar = deprtmentDAO.getList();
+//			dapDepartmentView.view(ar);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+		
+		LocationDAO locationDAO = new LocationDAO();
+		LocationView locationView = new LocationView();
 		try {
-			List<DeprtmentDTO> ar = deprtmentDAO.getList();
-			dapDepartmentView.view(ar);
+			List<LocationDTO> ar = locationDAO.geList();
+			locationView.view(ar);
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
