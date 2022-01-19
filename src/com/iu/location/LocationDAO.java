@@ -16,7 +16,7 @@ public class LocationDAO {
 		dbConnector = new DBConnector();
 	}
 
-	public List<LocationDTO> geList() throws Exception {
+	public List<LocationDTO> getList() throws Exception {
 		ArrayList<LocationDTO> ar = new ArrayList();
 		// SELECT * FROM LOCATIONS;
 		// 1. DB에 로그인

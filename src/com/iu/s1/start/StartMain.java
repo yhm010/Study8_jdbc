@@ -27,7 +27,7 @@ public class StartMain {
 		LocationDAO locationDAO = new LocationDAO();
 		LocationView locationView = new LocationView();
 		try {
-			List<LocationDTO> ar = locationDAO.geList();
+			List<LocationDTO> ar = locationDAO.getList();
 			locationView.view(ar);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
