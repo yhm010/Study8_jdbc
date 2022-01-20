@@ -18,26 +18,38 @@ public class DeprtmentDAO {
 	
 	// 부서번호로 조회 DB-> 부서번호로 하나의 데이터를 가져오는 것
 	
-	public DeprtmentDTO getOne(Integer departments_id) throws Exception {
+	public DeprtmentDTO getOne(DeprtmentDTO dep) throws Exception {
+		
 		DeprtmentDTO deprtmentDTO=null;
+		
 		// 1. DB 로그인
 		Connection con = dbConnector.getConnect();
 		// 2. 쿼리문 작성
-		String sql = "SELECT *FROM departments WHERE department_id = " + departments_id ;
-		// 3. 쿼리문을 미리 전송
+		String sql = "SELECT * FROM departments WHERE department_id = ? " ;
+		// 3. 쿼리문을 미리 전송해서 DB가 준비
 		PreparedStatement st = con.prepareStatement(sql);
 		// 4. ? 값을 세팅
+		// st.set데이터타입(int index, 값)
+		// index는 ?의 순서번호
+		// 그러나 oralce은 1번 부터 시작
+		st.setInt(1,dep.getDepartment_id());
+		
 		// 5. 최종 전송 후 결과 처리
 		ResultSet rs = st.executeQuery();
 		//1개의 row가 있거나 없거나 둘 중 하나
 		if(rs.next()) {
 			// 데이터가 있을 때
 			deprtmentDTO = new DeprtmentDTO();
-			deprtmentDTO.setDepartment_name(rs.getString("department_name"));
+			deprtmentDTO.setDepartment_name(rs.getString("Department_name"));
 			deprtmentDTO.setDepartment_id(rs.getInt("department_id"));
 			deprtmentDTO.setManager_id(rs.getInt("manager_id"));
 			deprtmentDTO.setLocation_id(rs.getInt("location_id"));
-			
+			System.out.println(deprtmentDTO.getDepartment_name());
+			//데이터가 없을 때
+			// 널이 아니면 출력 널이면 검색에 실패했다.
+			//메인에서는 컨트롤러에 스타트 실행하면 됨.
+		}else { 
+			System.out.println("검색에 실패했습니다.");
 		}
 		
 		// 6. 자원 해제
@@ -46,7 +58,7 @@ public class DeprtmentDAO {
 		con.close();
 		return deprtmentDTO;
 	}
-	
+	//-----------------------------------------------------------------------
 	
 	// 전체 조회
 	public List<DeprtmentDTO> getList() throws Exception {
