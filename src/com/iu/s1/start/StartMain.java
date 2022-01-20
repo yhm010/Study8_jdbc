@@ -15,24 +15,26 @@ public class StartMain {
 	public static void main(String[] args) {
 		System.out.println("DB 연동 테스트 시작");
 		
-//		DeprtmentDAO deprtmentDAO = new DeprtmentDAO();
+		DeprtmentDAO deprtmentDAO = new DeprtmentDAO();
 //		DepartmentView dapDepartmentView = new DepartmentView();
-//		try {
+		try {
+			DeprtmentDTO deprtmentDTO = deprtmentDAO.getOne(20);
+			System.out.println(deprtmentDTO.getDepartment_name());
 //			List<DeprtmentDTO> ar = deprtmentDAO.getList();
 //			dapDepartmentView.view(ar);
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-		
-		LocationDAO locationDAO = new LocationDAO();
-		LocationView locationView = new LocationView();
-		try {
-			List<LocationDTO> ar = locationDAO.getList();
-			locationView.view(ar);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+//		LocationDAO locationDAO = new LocationDAO();
+//		LocationView locationView = new LocationView();
+//		try {
+//			List<LocationDTO> ar = locationDAO.getList();
+//			locationView.view(ar);
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
 		System.out.println("DB 연동 테스트 끝");
 
