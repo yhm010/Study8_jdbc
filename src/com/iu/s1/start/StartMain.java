@@ -39,15 +39,23 @@ public class StartMain {
 //			e.printStackTrace();
 //		}
 		
-		DeprtmentController deprtmentController = new DeprtmentController();
-
+//		DeprtmentController deprtmentController = new DeprtmentController();
+//
+//		try {
+//			DeprtmentDTO deprtmentDTO = new DeprtmentDTO();
+//			 deprtmentController.start();
+//			
+//			System.out.println(deprtmentDTO.getDepartment_id());
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+		
+		FrontController frontController = new FrontController();
+		
 		try {
-			DeprtmentDTO deprtmentDTO = new DeprtmentDTO();
-			deprtmentDTO.setDepartment_id(20);
-			 deprtmentController.start();
-			
-			System.out.println(deprtmentDTO.getDepartment_id());
+			frontController.mainStart();
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

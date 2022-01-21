@@ -34,7 +34,7 @@ public class DeprtmentController {
 				DeprtmentDTO deprtmentDTO = new DeprtmentDTO();
 				deprtmentDTO.setDepartment_id(sc.nextInt());
 				deprtmentDTO = deprtmentDAO.getOne(deprtmentDTO);
-
+				departmentView.view(deprtmentDTO);
 				break;
 
 			default:

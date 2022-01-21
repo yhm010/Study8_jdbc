@@ -44,7 +44,6 @@ public class DeprtmentDAO {
 			deprtmentDTO.setDepartment_id(rs.getInt("department_id"));
 			deprtmentDTO.setManager_id(rs.getInt("manager_id"));
 			deprtmentDTO.setLocation_id(rs.getInt("location_id"));
-			System.out.println(deprtmentDTO.getDepartment_name());
 			//데이터가 없을 때
 			// 널이 아니면 출력 널이면 검색에 실패했다.
 			//메인에서는 컨트롤러에 스타트 실행하면 됨.
