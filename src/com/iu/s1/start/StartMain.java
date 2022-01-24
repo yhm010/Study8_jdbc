@@ -1,6 +1,8 @@
 package com.iu.s1.start;
 
 import java.util.List;
+
+import com.iu.location.LocationController;
 import com.iu.location.LocationDAO;
 import com.iu.location.LocationDTO;
 import com.iu.location.LocationView;
@@ -57,6 +59,13 @@ public class StartMain {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+		
+		LocationController locationController = new LocationController();
+		try {
+			locationController.start();
+		}catch (Exception e) {
+			// TODO: handle exception
 		}
 		
 		

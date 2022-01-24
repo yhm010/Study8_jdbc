@@ -1,5 +1,6 @@
 package com.iu.s1.deprtment;
 
+import java.security.PublicKey;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,6 +15,26 @@ public class DeprtmentDAO {
 	
 	public DeprtmentDAO () {
 		dbConnector = new DBConnector();
+	}
+	
+	// 부서정보, 부서에 근무하는 사원들의 정보
+	public void getDEP_EMPList() throws Exception {
+		Connection con = dbConnector.getConnect();
+		String sql="SELECT D.*, E.* "
+				+ "FROM Departments D "
+				+ "    INNER JOIN "
+				+ "     employees E "
+				+ "     ON(D.Department_ID = E.Department_ID) ";
+		
+		PreparedStatement st = con.prepareStatement(sql);
+		
+		ResultSet rs = st.executeQuery();
+		
+		while (rs.next()) {
+			
+		}
+		
+		
 	}
 	
 	// 부서번호로 조회 DB-> 부서번호로 하나의 데이터를 가져오는 것

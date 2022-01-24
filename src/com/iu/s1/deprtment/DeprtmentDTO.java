@@ -1,5 +1,9 @@
 package com.iu.s1.deprtment;
 
+import java.util.List;
+
+import com.iu.s1.employeeDTO.EmployeeDTO;
+
 public class DeprtmentDTO {
 	// 데이터를 담고 있는 역할
 	
@@ -7,7 +11,8 @@ public class DeprtmentDTO {
 	private String department_name;
 	private Integer manager_id;
 	private Integer location_id;
-	
+	//EmployeeDTO 멤버변수가 있어야 함.
+	private List<EmployeeDTO> employeeDTOs; // 부서는 사원을 n명 가지고 있다.
 	
 	public Integer getDepartment_id() {
 		return department_id;
