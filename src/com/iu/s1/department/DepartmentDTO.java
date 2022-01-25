@@ -12,9 +12,6 @@ public class DepartmentDTO {
 	private Integer manager_id;
 	private Integer location_id;
 	//EmployeeDTO 멤버변수가 있어야 함
-	
-	
-	
 	public Integer getDepartment_id() {
 		return department_id;
 	}
@@ -39,6 +36,9 @@ public class DepartmentDTO {
 	public void setLocation_id(Integer location_id) {
 		this.location_id = location_id;
 	}
+	
+	
+	
 	
 	
 	

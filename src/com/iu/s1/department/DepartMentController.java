@@ -24,6 +24,8 @@ public class DepartMentController {
 		while(flag) {
 			System.out.println("1. 부서 리스트 출력");
 			System.out.println("2. 부서 번 호 검색");
+			System.out.println("3. 부서 추가");
+			System.out.println("4. 부서 삭제");
 			System.out.println("3. 나    가    기");
 			int select = sc.nextInt();
 			
@@ -38,6 +40,11 @@ public class DepartMentController {
 				departmentDTO.setDepartment_id(sc.nextInt());
 				departmentDTO = departmentDAO.getOne(departmentDTO);
 				departmentView.view(departmentDTO);
+				break;
+			case 3:
+				
+				break;
+			case 4:
 				break;
 			default:
 				flag=false;

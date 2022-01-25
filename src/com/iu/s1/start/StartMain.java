@@ -29,13 +29,6 @@ public class StartMain {
 			e.printStackTrace();
 		}
 		
-//		DBConnector dbConnector = new DBConnector();
-//		try {
-//			dbConnector.getConnect();
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
 		
 		System.out.println("DB 연동 테스트 끝");
 	}

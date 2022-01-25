@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.iu.s1.region.RegionDTO;
 import com.iu.s1.util.DBConnector;
 
 public class DepartmentDAO {
@@ -122,5 +123,55 @@ public class DepartmentDAO {
 		 
 		 return ar;
 	}
+		 
+		//INSERT 컨트롤러에 번호를 더 추가해야함.
+			public int setInsert(DepartmentDTO departmentDTO) throws Exception {
+			
+				//1. DB 연결
+				Connection con = dbConnector.getConnect();
+				
+				
+				//2. SQL Query문 생성
+				String sql ="INSERT INTO DEPARTMENTS (DEPARTMENT_ID, DEPARTMENT_NAME, (DEPARTMENT_ID, DEPARTMENT_NAME, MANAGER_ID, LOCATION_ID) VALUES (?,?,?,?)";
+				
+				//3. 미리 전송
+				PreparedStatement st = con.prepareStatement(sql);
+				
+				//4. ? 세팅
+				st.setInt(1, departmentDTO.getDepartment_id());
+				st.setString(2, departmentDTO.getDepartment_name());
+				st.setInt(3, departmentDTO.getManager_id());
+				st.setInt(4, departmentDTO.getLocation_id());
+				
+				//5. 최종 전송 후 결과 처리
+				int result = st.executeUpdate();
+				
+				//6. 자원 해제
+				st.close();
+				con.close();
+				
+				return result;
+			}
+				
+				//DELETE 컨트롤러에 번호를 더 추가해야함.
+				public int setDelete(DepartmentDTO departmentDTO)throws Exception{
+					int result=0;
+					//1. DB 연결
+					Connection con = dbConnector.getConnect();
+					//2. SQL Query문 생성
+					String sql ="DELETE DEPARTMENTS WHERE DEPARTMENT_ID=?";
+					//3. 미리 전송
+					PreparedStatement st = con.prepareStatement(sql);
+					//4. ? 세팅
+					st.setInt(1, departmentDTO.getDepartment_id());
+					//5. 최종 전송 후 결과 처리
+					result = st.executeUpdate();
+					//6. 자원 해제
+					st.close();
+					con.close();
+					
+					
+					return result;
+				}
+	}
 
-}
