@@ -1,4 +1,4 @@
-package com.iu.location;
+package com.iu.s1.location;
 
 public class LocationDTO {
 	
@@ -8,6 +8,7 @@ public class LocationDTO {
 	private String city;
 	private String state_province;
 	private String country_id;
+	
 	
 	
 	public Integer getLocation_id() {
@@ -46,7 +47,7 @@ public class LocationDTO {
 	public void setCountry_id(String country_id) {
 		this.country_id = country_id;
 	}
-
+	
 	
 	
 

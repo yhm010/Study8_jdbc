@@ -1,18 +1,19 @@
-package com.iu.s1.deprtment;
+package com.iu.s1.department;
 
 import java.util.List;
 
-import com.iu.s1.employeeDTO.EmployeeDTO;
+import com.iu.s1.employee.EmployeeDTO;
 
-public class DeprtmentDTO {
-	// 데이터를 담고 있는 역할
+public class DepartmentDTO {
 	
+	//해당 테이블에 있는 컬럼명과 데이터타입을 동일하게, 
 	private Integer department_id;
 	private String department_name;
 	private Integer manager_id;
 	private Integer location_id;
-	//EmployeeDTO 멤버변수가 있어야 함.
-	private List<EmployeeDTO> employeeDTOs; // 부서는 사원을 n명 가지고 있다.
+	//EmployeeDTO 멤버변수가 있어야 함
+	
+	
 	
 	public Integer getDepartment_id() {
 		return department_id;
@@ -42,7 +43,11 @@ public class DeprtmentDTO {
 	
 	
 	
+	
+	
+	
 
+	
 	
 	
 
